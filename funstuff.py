@@ -19,7 +19,7 @@ class Funstuff(BotPlugin):
         else:
             return shot.capitalize()
 
-    @re_botcmd(pattern=r"^(who|what).+", prefixed=False, flags=re.IGNORECASE)
+    @re_botcmd(pattern=r"^(who|what)('?s|.* is)", prefixed=False, flags=re.IGNORECASE)
     def whoisbot(self, msg, match):
         """ Bot, introduce thyself """
         if self.bot_config.CHATROOM_FN.lower() in msg.body.lower():
